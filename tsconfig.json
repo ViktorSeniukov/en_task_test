@@ -1,4 +1,18 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@constants/*": ["constants/*"],
+      "@features/*": ["features/*"],
+      "@pages/*": ["pages/*"],
+      "@layouts/*": ["layouts/*"],
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

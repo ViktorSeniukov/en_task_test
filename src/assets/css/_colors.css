@@ -1,0 +1,25 @@
+:root {
+  /* TODO primary 0 */
+  --primary-0-bg: hsl(227deg, 56%, 28%);
+  --primary-0-clr: hsl(0deg, 0%, 98%);
+  --primary-0-clr-accent: hsl(341deg, 90%, 62%);
+  --primary-0-clr-decent: hsl(318deg, 42%, 40%);
+  --primary-0-strong: hsl(271deg, 35%, 33%);
+  --primary-0-decent: hsl(334deg, 54%, 52%);
+
+  /* TODO primary 10 */
+  --primary-10-bg: hsl(226deg, 58%, 19%);
+  --primary-10-clr: hsl(0deg, 0%, 98%);
+  --primary-10-clr-accent: hsl(341deg, 78%, 56%);
+  --primary-10-clr-decent: hsl(318deg, 44%, 27%);
+  --primary-10-strong: hsl(271deg, 38%, 25%);
+  --primary-10-decent: hsl(334deg, 49%, 36%);
+
+  /* TODO accent */
+  --accent-bg: hsl(280deg, 78%, 82%);
+  --accent-clr: hsl(262deg, 66%, 18%);
+  --accent-clr-accent: hsl(179deg, 71%, 68%);
+  --accent-clr-decent: hsl(266deg, 49%, 42%);
+  --accent-strong: hsl(260deg, 53%, 56%);
+  --accent-decent: hsl(274deg, 53%, 56%);
+}

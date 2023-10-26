@@ -1,0 +1,32 @@
+@mixin theme($theme: "", $step: "", $clr: "clr") {
+  /* stylelint-disable-next-line */
+  @if  $theme == "" {$theme: "primary";};
+
+  /* stylelint-disable-next-line */
+  @if  $step == "" {$step: "0";};
+
+  /* stylelint-disable-next-line */
+  @include set-theme($theme, $step);
+
+  background-color: var(--bg);
+  color: var(--#{$clr});
+}
+
+$theme_colors: [
+  "bg",
+  "clr",
+  "clr-accent",
+  "clr-decent",
+  "strong",
+  "decent",
+  ];
+
+@mixin set-theme($theme: "", $step: 0) {
+  /* stylelint-disable-next-line */
+  @if $theme == "" {$theme: "primary";};
+
+  /* stylelint-disable-next-line */
+  @each $name in $theme_colors {
+    --#{$name}: var(--#{$theme}-#{$step}-#{$name});
+  }
+}
