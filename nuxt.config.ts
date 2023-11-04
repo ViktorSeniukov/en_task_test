@@ -9,6 +9,11 @@ export default defineNuxtConfig({
 		},
 	},
 	srcDir: 'src/',
+	routeRules: {
+		'/': {
+			redirect: { to: 'task' },
+		},
+	},
 	css: [
 		'modern-normalize/modern-normalize.css',
 		'assets/css/_colors.css',

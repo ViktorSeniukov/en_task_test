@@ -9,7 +9,7 @@ export interface IEnTaskItem {
     order: number
 	component: string | Component
 	text?: string
-    value?: Ref<string>
+    value: Ref<string>
 	validator?: string[]
     placeholder?: string
 	length?: Ref<number | undefined>

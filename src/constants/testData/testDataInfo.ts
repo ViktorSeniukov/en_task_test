@@ -12,7 +12,7 @@ export const testDataInfo: ITestDataInfo = {
 			order: 2,
 			type: 'field',
 			placeholder: '...',
-			validator: ['name'],
+			validator: ['name is '],
 		},
 		{
 			order: 3,

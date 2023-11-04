@@ -1,11 +1,14 @@
 <script setup lang="ts">
     import { useEnTask } from '@pages/useEnTask';
+    import { getTask } from '@/server/api/getEnTask';
 
     definePageMeta({
         layout: 'task-layout',
     });
 
-    const { data } = useEnTask();
+    const { data, isValidTask } = useEnTask();
+
+    getTask();
 </script>
 
 <template>
@@ -22,11 +25,10 @@
             />
         </div>
         <button
-            v-tooltip="'Validate task!'"
-            class="bg-cyan-900 hover:bg-cyan-800 text-cyan-100 px-4 py-1 rounded">Check</button>
+            @click="isValidTask"
+            class="bg-cyan-900 text-cyan-100 px-4 py-1 rounded"
+        >
+            Check
+        </button>
     </div>
 </template>
-
-<style scoped>
-
-</style>
