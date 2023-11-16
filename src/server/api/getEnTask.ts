@@ -20,5 +20,4 @@ export const getTask = async (): Promise<any> => {
 	} catch (error) {
 		console.error(error);
 	}
-	console.log(unref(dataX));
 };
