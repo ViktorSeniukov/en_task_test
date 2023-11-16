@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <span class="text-green-400">
+    <span>
         <slot>
             {{ text }}
         </slot>

@@ -1,8 +1,10 @@
 <script setup lang="ts">
+    import Header from '@/components/header/Header.vue';
 </script>
 
 <template>
-    <div class="flex justify-center min-h-screen p-4">
+    <div class="flex flex-col h-screen">
+        <Header />
         <slot />
     </div>
 </template>

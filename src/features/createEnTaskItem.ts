@@ -2,7 +2,7 @@ import type { ITestDataEmptyText, ITestDataText } from '@/interface/testData/ITe
 import type { Component, Ref } from 'vue';
 import type { EnTaskItemType } from '@features/EnTaskItemType';
 import UiFieldInline from '@/components/ui_components/UiFieldInline/UiFieldInline.vue';
-import TaskText from '@/components/TaskText/TaskText.vue';
+import TaskText from '@/components/taskText/TaskText.vue';
 
 export interface IEnTaskItem {
     type: EnTaskItemType
@@ -27,7 +27,6 @@ export const createEnTaskItem = (itemValue: string, item: (ITestDataText | ITest
 		placeholder,
 	} = item;
 
-	const value = ref<string>(itemValue);
 	const length = ref<number>();
 
 	const component = (): string | Component => {
@@ -52,7 +51,7 @@ export const createEnTaskItem = (itemValue: string, item: (ITestDataText | ITest
 		type,
 		order,
 		component: component(),
-		value,
+		value: ref<string>(itemValue),
 		text,
 		validator,
 		placeholder,

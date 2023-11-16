@@ -23,7 +23,7 @@
 </script>
 
 <template>
-    <div class="ui-field-inline inline-block">
+    <div class="ui-field-inline inline-block rounded">
         <input
             @input="$emit('update:modelValue', $event.target.value)"
             :value="modelValue"
@@ -31,7 +31,7 @@
             :type="type"
             :maxlength="maxLength"
             :style="`--length: ${length}px`"
-            class="ui-field-inline__input shadow-sm px-1">
+            class="ui-field-inline__input shadow-sm px-1 focus-visible:outline-sky-600">
     </div>
 </template>
 
@@ -39,6 +39,8 @@
   .ui-field-inline {
     &__input {
       width: #{var(--length)};
+
+      border-radius: inherit;
     }
   }
 </style>

@@ -10,7 +10,8 @@
       "@features/*": ["features/*"],
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
-    }
+    },
+    "types": ["bun-types"]
   },
   "exclude": [
     "node_modules"
