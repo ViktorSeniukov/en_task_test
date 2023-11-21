@@ -1,8 +1,9 @@
+// eslint-disable-next-line import/extensions
 import type { ITestDataEmptyText, ITestDataText } from '@/interface/testData/ITestData';
 import type { Component, Ref } from 'vue';
 import type { EnTaskItemType } from '@features/EnTaskItemType';
-import UiFieldInline from '@/components/ui_components/UiFieldInline/UiFieldInline.vue';
 import TaskText from '@/components/taskText/TaskText.vue';
+import UiFieldInline from '@/components/ui_components/UiField/UiFieldInline.vue';
 
 export interface IEnTaskItem {
     type: EnTaskItemType
