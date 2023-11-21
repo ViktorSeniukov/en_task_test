@@ -11,7 +11,7 @@
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
     },
-    "types": ["bun-types"]
+    "types": ["bun-types", "nuxt", "vue-router"]
   },
   "exclude": [
     "node_modules"

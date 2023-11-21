@@ -2,13 +2,13 @@
 import { fileURLToPath } from 'url';
 
 export default defineNuxtConfig({
-	devtools: { enabled: true },
+	devtools: { enabled: false },
+	srcDir: 'src/',
 	app: {
 		head: {
 			title: 'En Task',
 		},
 	},
-	srcDir: 'src/',
 	routeRules: {
 		'/': {
 			redirect: { to: 'task' },
@@ -18,6 +18,12 @@ export default defineNuxtConfig({
 		'modern-normalize/modern-normalize.css',
 		'assets/css/_colors.css',
 		'assets/css/_base.css',
+	],
+	components: [
+		{
+			path: '@/components',
+			pathPrefix: false,
+		},
 	],
 	vite: {
 		css: {

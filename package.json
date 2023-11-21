@@ -11,7 +11,7 @@
     "docker-start": "docker-compose up -d"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.0.2",
     "@nuxtjs/tailwindcss": "latest",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",

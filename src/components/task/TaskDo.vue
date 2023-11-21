@@ -1,12 +1,10 @@
 <script setup lang="ts">
-    import type { PropType } from 'vue';
     import type { IEnTaskItem } from '@features/createEnTaskItem';
 
-    defineProps({
-        data: {
-            type: Array as PropType<IEnTaskItem[]>,
-            default: () => ([] as IEnTaskItem[]),
-        },
+    withDefaults(defineProps<{
+        data: IEnTaskItem[],
+    }>(), {
+        data: () => [] as IEnTaskItem[],
     });
 </script>
 
