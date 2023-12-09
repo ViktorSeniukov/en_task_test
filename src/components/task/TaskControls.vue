@@ -1,11 +1,11 @@
 <script setup lang="ts">
-    defineEmits(['submit']);
+    defineEmits(['check']);
 </script>
 
 <template>
     <div class="task-controls">
         <button
-            @click="$emit('submit')"
+            @click="$emit('check')"
             class="bg-cyan-900 text-cyan-100 px-4 py-1 rounded"
         >
             Check

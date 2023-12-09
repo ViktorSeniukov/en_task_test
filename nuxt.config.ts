@@ -39,6 +39,7 @@ export default defineNuxtConfig({
 		'@constants': fileURLToPath(new URL('./src/constants', import.meta.url)),
 		'@pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
 		'@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
+		'@constants/icon': fileURLToPath(new URL('./src/constants/icon', import.meta.url)),
 	},
 	modules: ['@nuxtjs/tailwindcss'],
 });

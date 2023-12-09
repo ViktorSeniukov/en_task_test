@@ -12,8 +12,6 @@ export const auth = (event: H3Event): boolean => {
 				watch: false,
 			},
 		);
-		console.log('pass', password);
-		console.log('cookie', passCookie);
 	}
 
 	return false;

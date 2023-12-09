@@ -1,25 +1,71 @@
 import type { Ref } from 'vue';
 import type { ICreateItem } from '@/interface/create/ICreateItem';
+import { getFromStorage, setToStorage, removeFromStorage } from '@features/storage';
+import { getCreateTaskJson } from '@features/create/getCreateJson';
+import { getCreateTaskJsonToRef } from '@features/create/getCreateTaskJsonToRef';
 
 interface IUseCreate {
     readonly fields: Ref<ICreateItem[]>
+	readonly addField: () => void
+	readonly saveFields: () => void
+	readonly resetFields: () => void
 }
 
-export const useCreate = ():IUseCreate => {
-	const fields = ref<ICreateItem[]>([
-		{
-			id: 1,
-			typeValue: ref('text'),
+export const createCreateStore = (): IUseCreate => {
+	const fields = ref<ICreateItem[]>([]);
+
+	onMounted(() => {
+		const fieldsFromStorage = ref<string | null>(getFromStorage('createTask'));
+
+		if (unref(fieldsFromStorage)) {
+			fields.value = getCreateTaskJsonToRef(unref(fieldsFromStorage)!);
+		} else {
+			fields.value = [{
+				id: 1,
+				typeValue: ref('dont-selected'),
+				textValue: ref(''),
+				missedValue: ref(''),
+				validatorValue: ref(''),
+				placeholderValue: ref(''),
+			}];
+		}
+	});
+
+	const addField = (): void => {
+		unref(fields).push({
+			id: unref(fields).length + 1,
+			typeValue: ref('dont-selected'),
 			textValue: ref(''),
-		},
-		// {
-		// 	id: 2,
-		// 	typeValue: ref('text'),
-		// 	textValue: ref(''),
-		// },
-	]);
+			missedValue: ref(''),
+			validatorValue: ref(''),
+			placeholderValue: ref(''),
+		});
+	};
+
+	const saveFields = (): void => {
+		const fieldsObj = getCreateTaskJson(unref(fields));
+		setToStorage('createTask', JSON.stringify(fieldsObj));
+	};
+
+	const resetFields = (): void => {
+		removeFromStorage('createTask');
+		fields.value = [{
+			id: 1,
+			typeValue: ref('dont-selected'),
+			textValue: ref(''),
+			missedValue: ref(''),
+			validatorValue: ref(''),
+			placeholderValue: ref(''),
+		}];
+	};
 
 	return {
 		fields,
+		addField,
+		saveFields,
+		resetFields,
 	};
 };
+
+export const useCreateProvide = (): void => provide('CREATE_STORE', createCreateStore());
+export const useCreateInject = (): IUseCreate => inject<ReturnType<typeof createCreateStore>>('CREATE_STORE')!;

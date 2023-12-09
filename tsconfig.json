@@ -9,9 +9,12 @@
       "@constants/*": ["constants/*"],
       "@features/*": ["features/*"],
       "@pages/*": ["pages/*"],
-      "@layouts/*": ["layouts/*"],
+      "@layouts/*": ["layouts/*"]
     },
-    "types": ["bun-types", "nuxt", "vue-router"]
+    "types": ["bun-types", "nuxt", "vue-router"],
+    "lib": [
+      "DOM",
+    ]
   },
   "exclude": [
     "node_modules"

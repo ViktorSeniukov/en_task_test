@@ -6,7 +6,7 @@
         layout: 'task-layout',
     });
 
-    const { data, isValidTask } = useEnTask();
+    const { data, validateTask, checkResultText, isShowCheckResult } = useEnTask();
 </script>
 
 <template>
@@ -17,8 +17,11 @@
         >
             <TaskDo :data="data" />
         </div>
+        <div>
+            <span v-if="isShowCheckResult">{{ checkResultText }}</span>
+        </div>
         <TaskControls
-            @submit="isValidTask"
+            @check="validateTask"
             class="bg-amber-200 col-span-2"
         />
     </div>
