@@ -6,7 +6,12 @@
         layout: 'task-layout',
     });
 
-    const { data, validateTask, checkResultText, isShowCheckResult } = useEnTask();
+    const {
+        data,
+        validateTask,
+        checkResultText,
+        isShowCheckResult,
+    } = useEnTask();
 </script>
 
 <template>
