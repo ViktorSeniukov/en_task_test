@@ -1,7 +1,8 @@
-import { testDataInfo } from '@constants/testData/testDataInfo';
 import { createEnTaskItem, type IEnTaskItem } from '@features/createEnTaskItem';
 import { expectedValueValidator } from '@/helpers/validator/expectedValueValidator';
 import type { Ref } from 'vue';
+import { getFromStorage } from '@features/storage';
+import { getCreateJsonStringToArray } from '@features/create/getCreateJsonStringToArray';
 
 interface IUseEnTask {
 	data: Ref<IEnTaskItem[]>
@@ -16,9 +17,16 @@ export const useEnTask = (): IUseEnTask => {
 	const checkResultText = ref('');
 	const isShowCheckResult = ref(false);
 
-	const data = computed(() => testDataInfo.docs
-		.map((item) => createEnTaskItem('', item))
-		.sort((a, b) => a.order - b.order));
+	const fieldsFromStorage = ref<string | null>();
+	const data = shallowRef<IEnTaskItem[]>([]);
+
+	onMounted(() => {
+		fieldsFromStorage.value = getFromStorage('createTask');
+
+		data.value = getCreateJsonStringToArray(unref(fieldsFromStorage)!)
+			.map((item) => createEnTaskItem('', item))
+			.sort((a, b) => a.order - b.order);
+	});
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	const validateTask = () => {

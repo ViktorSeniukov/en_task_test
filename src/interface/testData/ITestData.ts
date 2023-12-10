@@ -10,6 +10,7 @@ export interface ITestDataText {
 export interface ITestDataEmptyText {
     order: number
     type: EnTaskItemType
+    missed: string
     placeholder: string
     validator: string[]
     options?: string

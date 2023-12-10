@@ -17,7 +17,7 @@
             v-model="item.value!.value"
             :placeholder="item.placeholder"
             :text="item.text"
-            :maxLength="item.length!.value"
+            :maxLength="item.length?.value"
         />
     </div>
 </template>

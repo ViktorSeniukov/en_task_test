@@ -44,7 +44,7 @@ export const createEnTaskItem = (itemValue: string, item: (ITestDataText | ITest
 
 	if (validator && Array.isArray(validator)) {
 		length.value = validator.length > 1
-			? validator.sort((a, b) => a.length - b.length)[0].length + 2
+			? validator.sort((a, b) => b.length - a.length)[0].length + 2
 			: validator[0].length + 2;
 	}
 

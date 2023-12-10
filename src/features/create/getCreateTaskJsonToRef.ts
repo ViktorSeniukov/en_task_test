@@ -10,7 +10,7 @@ export const getCreateTaskJsonToRef = (fieldsStr: string): ICreateItem[] => {
 		typeValue: item.type,
 		textValue: item.text || '',
 		missedValue: item.missed || '',
-		validatorValue: item.validator || '',
+		validatorValue: item.type === 'field' ? item.validator.join(', ') : '',
 		placeholderValue: item.placeholder || '',
 	}));
 

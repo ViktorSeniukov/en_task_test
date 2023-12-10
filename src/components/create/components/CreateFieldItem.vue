@@ -20,20 +20,21 @@
 </script>
 
 <template>
-    <li class="create-field-item grid grid-cols-4 gap-2">
+    <li class="create-field-item grid grid-cols-8 gap-2">
         <UiFieldSelect
             @input="$emit('update:type', $event.target.value)"
             @change="onChangeType(type)"
             :modelValue="type"
             :name="'create'"
             :options="defaultOptions"
+            class="col-span-2"
         />
 
         <UiFieldTextarea
             v-if="isTextType"
             @input="$emit('update:text', $event.target.value)"
             :modelValue="text"
-            class="col-span-3"
+            class="col-span-6"
         />
 
         <UiField
@@ -41,6 +42,7 @@
             @input="$emit('update:missed', $event.target.value)"
             :modelValue="missed"
             :placeholder="'Missed'"
+            class="col-span-2"
         />
 
         <UiField
@@ -48,6 +50,7 @@
             @input="$emit('update:validator', $event.target.value)"
             :modelValue="validator"
             :placeholder="'Validator'"
+            class="col-span-2"
         />
 
         <UiField
@@ -55,6 +58,7 @@
             @input="$emit('update:placeholder', $event.target.value)"
             :modelValue="placeholder"
             :placeholder="'Placeholder'"
+            class="col-span-2"
         />
 
         <div
@@ -76,7 +80,7 @@
   }
 
   .create-field-item-fields-preloader {
-    grid-column: 2/-1;
+    grid-column: 3/-1;
     height: 100%;
   }
 </style>
