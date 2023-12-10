@@ -1,6 +1,7 @@
 import type { EnTaskItemType } from '@features/EnTaskItemType';
 
 export interface ITestDataText {
+    id: number
     order: number
     type: EnTaskItemType
     text: string
@@ -8,6 +9,7 @@ export interface ITestDataText {
 }
 
 export interface ITestDataEmptyText {
+    id: number
     order: number
     type: EnTaskItemType
     missed: string

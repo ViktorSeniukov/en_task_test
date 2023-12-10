@@ -1,8 +1,9 @@
 import type { Ref } from 'vue';
 import type { ICreateItem } from '@/interface/create/ICreateItem';
 import { getFromStorage, setToStorage, removeFromStorage } from '@features/storage';
-import { getCreateTaskJson } from '@features/create/getCreateJson';
+import { getCreateTaskJson } from '@features/create/getCreateTaskJson';
 import { getCreateTaskJsonToRef } from '@features/create/getCreateTaskJsonToRef';
+import {map} from 'yaml/dist/schema/common/map';
 
 interface IUseCreate {
     readonly fields: Ref<ICreateItem[]>
@@ -43,7 +44,7 @@ export const createCreateStore = (): IUseCreate => {
 	};
 
 	const saveFields = (): void => {
-		const fieldsObj = getCreateTaskJson(unref(fields));
+		const fieldsObj = unref(fields).map((item, index) => getCreateTaskJson(item, index));
 		setToStorage('createTask', JSON.stringify(fieldsObj));
 	};
 
