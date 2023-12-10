@@ -6,6 +6,11 @@
         layout: 'task-layout',
     });
 
+    useSeoMeta({
+        title: 'Create task',
+        description: 'Create your task',
+    });
+
     useCreateProvide();
 </script>
 

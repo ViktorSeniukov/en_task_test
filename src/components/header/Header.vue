@@ -10,13 +10,20 @@
     const navigationList: INavigationItem[] = [
         {
             id: 1,
-            href: '/task',
+            href: '/',
+            caption: 'Home',
+            isActive: true,
+            activeClass: 'text-lime-600',
+        },
+        {
+            id: 2,
+            href: '/train',
             caption: 'Train',
             isActive: true,
             activeClass: 'text-rose-500',
         },
         {
-            id: 2,
+            id: 3,
             href: '/create',
             caption: 'Create',
             isActive: true,
